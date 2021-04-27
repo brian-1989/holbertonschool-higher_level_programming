@@ -1,0 +1,3 @@
+#!/bin/bash
+#python -m compileall: usage to compile python sources
+python3 -m compileall -b $PYFILE
