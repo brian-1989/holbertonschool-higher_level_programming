@@ -2,6 +2,7 @@
 def uppercase(str):
     for i in str:
         j = ord(i)
+        # condiction to check if j is: uppercase, space or number
         if j >= 65 and j <= 90 or j == 32 or j >= 48 and j <= 57:
             j = ord(i)
         else:
