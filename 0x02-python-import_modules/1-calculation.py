@@ -1,14 +1,11 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    # All functions of the Calculator file are imported
-    from calculator_1 import add
-    from calculator_1 import sub
-    from calculator_1 import mul
-    from calculator_1 import div
+    # import the calculator file, to call all the functions
+    import calculator_1
     a = 10
     b = 5
     # print the result of each function
-    print("{} + {} = {}".format(a, b, add(a, b)))
-    print("{} + {} = {}".format(a, b, sub(a, b)))
-    print("{} + {} = {}".format(a, b, mul(a, b)))
-    print("{} + {} = {}".format(a, b, div(a, b)))
+    print("{} + {} = {}".format(a, b, calculator_1.add(a, b)))
+    print("{} + {} = {}".format(a, b, calculator_1.sub(a, b)))
+    print("{} + {} = {}".format(a, b, calculator_1.mul(a, b)))
+    print("{} + {} = {}".format(a, b, calculator_1.div(a, b)))
