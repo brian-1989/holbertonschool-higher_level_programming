@@ -30,6 +30,8 @@ int is_palindrome(listint_t **head)
 	/* statament of the variable to the struct */
 	listint_t *temp_slow, *temp_slow_2 = NULL, *temp_fast,
 		*temp_hold = NULL, *temp_3 = NULL;
+	if (head == NULL)
+		return ('\0');
 	temp_slow = *head, temp_fast = (*head)->next;
 	/* loop to determine the midpoint of the list */
 	while (temp_fast != NULL)
@@ -48,7 +50,7 @@ int is_palindrome(listint_t **head)
 	temp_hold = temp_3;
 	temp_slow_2 = *head;
 	/* loop to compare the two list */
-	while (temp_slow_2 || temp_3)
+	while (temp_slow_2 && temp_3)
 	{
 		/* condicition to comparar the elements of each node */
 		if (temp_slow_2->n != temp_3->n)
