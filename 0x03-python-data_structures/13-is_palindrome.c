@@ -31,7 +31,7 @@ int is_palindrome(listint_t **head)
 	listint_t *temp_slow, *temp_slow_2 = NULL, *temp_fast,
 		*temp_hold = NULL, *temp_3 = NULL;
 	if (head == NULL)
-		return ('\0');
+		return (1);
 	temp_slow = *head, temp_fast = (*head)->next;
 	/* loop to determine the midpoint of the list */
 	while (temp_fast != NULL)
