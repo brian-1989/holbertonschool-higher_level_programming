@@ -32,8 +32,11 @@ int is_palindrome(listint_t **head)
 		*temp_hold = NULL, *temp_3 = NULL;
 	temp_slow = *head, temp_fast = (*head)->next;
 	/* loop to determine the midpoint of the list */
-	while (temp_fast->next != NULL)
+	while (temp_fast != NULL)
 	{
+		/* condicition to when the linked list is pair */
+		if (temp_fast->next == NULL)
+			break;
 		temp_slow = temp_slow->next;
 		temp_fast = temp_fast->next->next;
 	}
@@ -49,7 +52,10 @@ int is_palindrome(listint_t **head)
 	{
 		/* condicition to comparar the elements of each node */
 		if (temp_slow_2->n != temp_3->n)
-		return (0);
+		{
+			temp_slow->next = temp_hold, temp_hold = NULL;
+			return (0);
+		}
 		temp_slow_2 = temp_slow_2->next;
 		temp_3 = temp_3->next;
 	}
