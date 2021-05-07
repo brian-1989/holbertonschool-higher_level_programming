@@ -30,7 +30,7 @@ int is_palindrome(listint_t **head)
 	/* statament of the variable to the struct */
 	listint_t *temp_slow, *temp_slow_2 = NULL, *temp_fast,
 		*temp_hold = NULL, *temp_3 = NULL;
-	if (head == NULL)
+	if (*head == NULL)
 		return (1);
 	temp_slow = *head, temp_fast = (*head)->next;
 	/* loop to determine the midpoint of the list */
