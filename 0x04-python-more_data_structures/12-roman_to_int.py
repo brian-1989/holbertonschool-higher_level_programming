@@ -24,7 +24,7 @@ def roman_to_int(roman_string):
             if my_list[i] >= my_list[i + 1]:
                 new_list.append(my_list[i])
             else:
-                new_list.append(my_list[i] - my_list[i + 1])
+                new_list.append(my_list[i + 1] - my_list[i])
         else:
             if my_list[i] <= my_list[i - 1]:
                 new_list.append(my_list[i])
