@@ -3,6 +3,7 @@ def roman_to_int(roman_string):
     if not isinstance(roman_string, str) or roman_string is None:
         return 0
     sum = 0
+    h = 0
     my_list = []
     new_list = []
     new_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 100}
@@ -17,18 +18,22 @@ def roman_to_int(roman_string):
                 break
     # This loop runs through the stored values of the letters found,
     # in whole numbers
-    for i in range(0, len(my_list)):
+    while h < len(my_list):
         # condition to validate if i is in the last position
-        if i + 1 < len(my_list):
+        if h + 1 < len(my_list):
             # condition to validate the notation of the subtraction
-            if my_list[i] >= my_list[i + 1]:
-                new_list.append(my_list[i])
+            if my_list[h] >= my_list[h + 1]:
+                new_list.append(my_list[h])
+                h += 1
             else:
-                new_list.append(my_list[i + 1] - my_list[i])
+                new_list.append(my_list[h + 1] - my_list[h])
+                h += 2
         else:
-            if my_list[i] <= my_list[i - 1]:
-                new_list.append(my_list[i])
+            if my_list[h] <= my_list[h - 1]:
+                new_list.append(my_list[h])
+                h += 1
             else:
+                h += 1
                 continue
     # this loop is to add the number of the list
     for i in new_list:
