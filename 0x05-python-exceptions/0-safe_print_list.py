@@ -5,7 +5,7 @@ def safe_print_list(my_list=[], x=0):
     for j in range(0, x):
         try:
             # with this condition we make the exception
-            print("{}".format(my_list[j]))
+            print("{}".format(my_list[j]), end="")
             num_count += 1
         # exception for when occurrence the error
         except IndexError:
