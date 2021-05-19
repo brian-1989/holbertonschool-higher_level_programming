@@ -18,10 +18,10 @@ class Square:
     """ Function to calculate the area of a square """
 
     def area(self):
-        self.area = self.__size**2
+        _area = self.__size**2
         """ Returns:
         the area of a square. """
-        return self.area
+        return _area
     """ Function to calculate the area of a square """
     @property
     def size(self):
