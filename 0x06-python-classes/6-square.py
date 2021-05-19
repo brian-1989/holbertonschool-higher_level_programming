@@ -49,11 +49,8 @@ class Square:
 
     """ method that prints in stdout the square with the character and space"""
     def my_print(self):
-        self.__position += (0, 0)
         if self.__size is 0:
             print(end="\n")
-        if type(self.__position[0]) and type(self.__position[1]) is not int:
-            raise TypeError("position must be a tuple of 2 positive integers")
         for i in range(0, self.__size):
             if self.__position[0] is not 0 or self.__position[1] is not 0:
                 for j in range(0, self.__position[0]):
@@ -61,5 +58,6 @@ class Square:
             for k in range(0, self.__size):
                 print("#", end="")
             print(end="\n")
-        for i in range(0, self.__position[1]):
-            print(end="\n")
+        if self.__position[1] > 0:
+            for i in range(0, self.__position[1]):
+                print(end="\n")
