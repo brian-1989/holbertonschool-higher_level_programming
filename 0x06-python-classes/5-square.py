@@ -22,11 +22,11 @@ class Square:
         """ Returns:the area of a square. """
         return _area
 
-    """ method to calculate the area of a square """
     @property
     def size(self):
         return self.__size
 
+    """ method to modify the attribute """
     @size.setter
     def size(self, value):
         if type(value) is not int:
