@@ -18,14 +18,14 @@ class Rectangle:
     @property
     def width(self):
         """ Returns the private attribute of the method.
-        
+
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """ The self.__value attribute is modified.
-        
+
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -44,7 +44,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """The self.__height attribute is modified.
-        
+
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
