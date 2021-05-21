@@ -44,7 +44,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """The self.__height attribute is modified.
-        
+
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -62,7 +62,6 @@ class Rectangle:
 
     def perimeter(self):
         """ Method that find the perimeter of a rectangle.
-        Return the perimeter of a rectangle.
 
         """
         if self.__width is 0 or self.__height is 0:
