@@ -3,8 +3,9 @@
 
 
 class Rectangle:
-    """ A class called rectangle is defined """
+    """ A class called rectangle is defined.
 
+    """
     def __init__(self, width=0, height=0):
         """  The object is initialized with these arguments.
         Args:
