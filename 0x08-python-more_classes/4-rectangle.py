@@ -82,15 +82,15 @@ class Rectangle:
         Return a string with the rectangle.
 
         """
-        _retangle = ""
+        _rectangle = ""
         if self.__width is 0 or self.__height is 0:
-            return _retangle
+            return _rectangle
         for _width in range(0, self.__height):
             for _height in range(0, self.__width):
-                _retangle += "#"
+                _rectangle += "#"
             if _width < self.__height - 1:
-                _retangle += "\n"
-        return _retangle
+                _rectangle += "\n"
+        return _rectangle
 
     def __repr__(self) -> str:
         """Method that makes a representation of a rectangle.
