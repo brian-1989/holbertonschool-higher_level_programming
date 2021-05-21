@@ -3,10 +3,10 @@
 
 
 class Rectangle:
-    number_of_instances = 0
     """ A class called rectangle is defined.
 
     """
+    number_of_instances = 0
     def __init__(self, width=0, height=0):
         """  The object is initialized with these arguments.
         Args:
