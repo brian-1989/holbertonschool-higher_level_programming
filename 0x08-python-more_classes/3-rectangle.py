@@ -84,7 +84,7 @@ class Rectangle:
         """
         _retangle = ""
         if self.__width is 0 or self.__height is 0:
-            _retangle = ""
+            return _retangle
         for _width in range(0, self.__height):
             for _height in range(0, self.__width):
                 _retangle += "#"
