@@ -49,4 +49,9 @@ class Rectangle:
         """ Return the area of a rectangle """
 
     def perimeter(self):
+        """ Method that find the perimeter of a rectangle """
+        
+        if self.__width is 0 or self.__height is 0:
+            return 0
         return (self.__width * 2) + (self.__height * 2)
+        """ Return the perimeter of a rectangle """
