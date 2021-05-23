@@ -41,7 +41,10 @@ class Square:
                     _square += "#"
                 if i < self.__size - 1:
                     _square += "\n"
-        return _square
+            return _square
+        else:
+            _square = ""
+            return _square
 
     @property
     def size(self):
