@@ -1,0 +1,116 @@
+File of test to the function that print a text
+==================================================================================
+
+Import the module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+==================================================================================
+Cases of requirement:
+
+    Test to the module docstring:
+        >>> _module = __import__("5-text_indentation").__doc__
+	    >>> len(_module) > 1
+	    True
+
+----------------------------------------------------------------------------------
+    Test to the module docstring:
+        >>> _func = __import__("5-text_indentation").text_indentation.__doc__
+	    >>> len(_func) > 1
+	    True
+
+----------------------------------------------------------------------------------
+    Test of Pep8:
+        >>> import os
+	    >>> os.popen("pep8 2-matrix_divided.py").read()
+	    ''
+
+==================================================================================
+Cases to test the function:
+    Test to normal use:
+        >>> text_indentation("Hola. Brian?, como: estas?")
+        Hola.
+        <BLANKLINE>
+        Brian?
+        <BLANKLINE>
+        , como:
+        <BLANKLINE>
+        estas?
+        <BLANKLINE>
+
+----------------------------------------------------------------------------------
+    Test when there is spaces at beginning:
+        >>> text_indentation("                                             Hola. Brian?, como: estas?")
+        Hola.
+        <BLANKLINE>
+        Brian?
+        <BLANKLINE>
+        , como:
+        <BLANKLINE>
+        estas?
+        <BLANKLINE>
+
+----------------------------------------------------------------------------------
+    Test when there is spaces in half of text:
+        >>> text_indentation("Hola. Brian?,                     como:                           estas?")
+        Hola.
+        <BLANKLINE>
+        Brian?
+        <BLANKLINE>
+        ,como:
+        <BLANKLINE>
+        estas?
+        <BLANKLINE>
+
+----------------------------------------------------------------------------------
+    Test when there is spaces at end of text:
+        >>> text_indentation("Hola. Brian?, como: estas?                                                    ")
+        Hola.
+        <BLANKLINE>
+        Brian?
+        <BLANKLINE>
+        , como:
+        <BLANKLINE>
+        estas?
+        <BLANKLINE>
+
+----------------------------------------------------------------------------------
+    Test when the argument are special characters:
+        >>> text_indentation(" . ? : ")
+        .
+        <BLANKLINE>
+        ?
+        <BLANKLINE>
+        :
+        <BLANKLINE>
+
+----------------------------------------------------------------------------------
+    Test when there are line jumps in the text:
+        >>> text_indentation("Brian. \n Zapata? \n pino:")
+        Brian.
+        <BLANKLINE>
+        Zapata?
+        <BLANKLINE>
+        pino:
+        <BLANKLINE>
+
+==================================================================================
+Errors Case to test the function:
+    Test when the text is a int:
+        >>> text_indentation(4)
+        Traceback (most recent call last):
+            ...
+        TypeError: text must be a string
+
+----------------------------------------------------------------------------------
+    Test when the text is None:
+        >>> text_indentation(None)
+        Traceback (most recent call last):
+            ...
+        TypeError: text must be a string
+
+----------------------------------------------------------------------------------
+    Test when the text is Empty:
+        >>> text_indentation()
+        Traceback (most recent call last):
+            ...
+        TypeError: text_indentation() missing 1 required positional argument: 'text'
