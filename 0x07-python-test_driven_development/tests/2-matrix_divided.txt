@@ -1,29 +1,81 @@
-File of test to the function of the divide
-==============
->>> matrix_divided = __import__('2-matrix_divided').matrix_divided
->>> matrix = [[1, 2, 3],[4, 5, 6]]
->>> matrix_divided(matrix, 0)
-Traceback (most recent call last):
-    ...
-ZeroDivisionError: division by zero
->>> matrix = [[0, 0, 0],[4, 5, 6]]
->>> matrix_divided(matrix, 3)
-[[0.0, 0.0, 0.0], [1.33, 1.67, 2.0]]
->>> matrix = [[1, 2, 3],[4, 5, 6]]
->>> matrix_divided(matrix, 20.546)
-[[0.05, 0.1, 0.15], [0.19, 0.24, 0.29]]
->>> matrix = [[1, 2, 3],["B", 5, 6]]
->>> matrix_divided(matrix, 3)
-Traceback (most recent call last):
-    ...
-TypeError: matrix must be a matrix (list of lists) of integers/floats
->>> matrix = [[1, 2, 3],[4, 5, 6, 7]]
->>> matrix_divided(matrix, 3)
-Traceback (most recent call last):
-    ...
-TypeError: Each row of the matrix must have the same size
->>> matrix = [[1, 2, 3],[4, 5, 6]]
->>> matrix_divided(matrix, "B")
-Traceback (most recent call last):
-    ...
-TypeError: div must be a number
+File of test to the function 2-matrix_divided
+==================================================================================
+
+Import the module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+==================================================================================
+Cases of requirement:
+
+    Test to the module docstring:
+        >>> _module = __import__("2-matrix_divided").__doc__
+	    >>> len(_module) > 1
+	    True
+
+----------------------------------------------------------------------------------
+    Test to the module docstring:
+        >>> _func = __import__("2-matrix_divided").matrix_divided.__doc__
+	    >>> len(_func) > 1
+	    True
+
+----------------------------------------------------------------------------------
+    Test of Pep8:
+        >>> import os
+	    >>> os.popen("pep8 2-matrix_divided.py").read()
+	    ''
+
+==================================================================================
+Cases to test the function:
+    
+    Test with positive integer number and positive float:
+        >>> matrix = [[0, 0, 0],[4, 5, 6]]
+        >>> matrix_divided(matrix, 3)
+        [[0.0, 0.0, 0.0], [1.33, 1.67, 2.0]]
+
+        >>> matrix = [[1, 2, 3],[4, 5, 6]]
+        >>> matrix_divided(matrix, 20.546)
+        [[0.05, 0.1, 0.15], [0.19, 0.24, 0.29]]
+
+----------------------------------------------------------------------------------   
+    Test with negative integer number and negative float:
+        >>> matrix = [[1, 2, 3],[4, 5, 6]]
+        >>> matrix_divided(matrix, -4)
+        [[-0.25, -0.5, -0.75], [-1.0, -1.25, -1.5]]
+
+        >>> matrix = [[1, 2, 3],[4, 5, 6]]
+        >>> matrix_divided(matrix, -7.9)
+        [[-0.13, -0.25, -0.38], [-0.51, -0.63, -0.76]]
+
+==================================================================================
+Errors Case to test the function:
+
+    Test when the divider is zero
+        >>> matrix = [[1, 2, 3],[4, 5, 6]]
+        >>> matrix_divided(matrix, 0)
+        Traceback (most recent call last):
+            ...
+        ZeroDivisionError: division by zero
+
+----------------------------------------------------------------------------------
+    Test when the dividend is a string
+        >>> matrix = [[1, 2, 3],["B", 5, 6]]
+        >>> matrix_divided(matrix, 3)
+        Traceback (most recent call last):
+            ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+----------------------------------------------------------------------------------
+    Test when a list have a length more bigger than the other
+        >>> matrix = [[1, 2, 3],[4, 5, 6, 7]]
+        >>> matrix_divided(matrix, 3)
+        Traceback (most recent call last):
+            ...
+        TypeError: Each row of the matrix must have the same size
+
+----------------------------------------------------------------------------------
+    Test when the divider is a string
+        >>> matrix = [[1, 2, 3],[4, 5, 6]]
+        >>> matrix_divided(matrix, "B")
+        Traceback (most recent call last):
+            ...
+        TypeError: div must be a number
