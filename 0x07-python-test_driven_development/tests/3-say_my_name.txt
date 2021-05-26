@@ -31,6 +31,11 @@ Cases to test the function:
         >>> say_my_name("Walter", "White")
         My name is Walter White
 
+----------------------------------------------------------------------------------
+    Test when 1 argument is passed:
+        >>> say_my_name("Brian")
+        My name is Brian 
+
 ==================================================================================
 Errors Case to test the function:
     Test when the name is integer
@@ -59,3 +64,10 @@ Errors Case to test the function:
         Traceback (most recent call last):
             ...
         TypeError: last_name must be a string
+
+----------------------------------------------------------------------------------
+    Test when is Empty:
+        >>> say_my_name()
+        Traceback (most recent call last):
+            ...
+        TypeError: say_my_name() missing 1 required positional argument: 'first_name'
