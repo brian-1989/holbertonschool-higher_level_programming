@@ -1,25 +1,71 @@
-File of test to the function that print a square
-==============
->>> print_square = __import__('4-print_square').print_square
->>> print_square(5)
-#####
-#####
-#####
-#####
-#####
->>> print_square("B")
-Traceback (most recent call last):
-    ...
-TypeError: size must be an integer
->>> print_square(3.5)
-Traceback (most recent call last):
-    ...
-TypeError: size must be an integer
->>> print_square(-5)
-Traceback (most recent call last):
-    ...
-ValueError: size must be >= 0
->>> print_square(None)
-Traceback (most recent call last):
-    ...
-TypeError: size must be an integer
+File of test to the function 4-print_square
+==================================================================================
+
+Import the module:
+    >>> print_square = __import__('4-print_square').print_square
+
+==================================================================================
+ases of requirement:
+
+    Test to the module docstring:
+        >>> _module = __import__("4-print_square").__doc__
+	    >>> len(_module) > 1
+	  c  True
+
+----------------------------------------------------------------------------------
+    Test to the module docstring:
+        >>> _func = __import__("4-print_square").print_square.__doc__
+	    >>> len(_func) > 1
+	    True
+
+----------------------------------------------------------------------------------
+    Test of Pep8:
+        >>> import os
+	    >>> os.popen("pep8 2-matrix_divided.py").read()
+	    ''
+
+==================================================================================
+Cases to test the function:
+    Test to normal use:
+        >>> print_square(5)
+        #####
+        #####
+        #####
+        #####
+        #####
+
+==================================================================================
+Errors Case to test the function:
+    Test when the size is a string:
+        >>> print_square("B")
+        Traceback (most recent call last):
+            ...
+        TypeError: size must be an integer
+
+----------------------------------------------------------------------------------
+    Test when the size is a float number: 
+        >>> print_square(3.5)
+        Traceback (most recent call last):
+            ...
+        TypeError: size must be an integer
+
+----------------------------------------------------------------------------------
+    Test when the size is a negative number:
+        >>> print_square(-5)
+        Traceback (most recent call last):
+            ...
+        ValueError: size must be >= 0
+
+----------------------------------------------------------------------------------
+    Test when the size is None
+        >>> print_square(None)
+        Traceback (most recent call last):
+            ...
+        TypeError: size must be an integer
+
+----------------------------------------------------------------------------------
+    Test when the size is Empty
+        >>> print_square()
+        Traceback (most recent call last):
+            ...
+        TypeError: print_square() missing 1 required positional argument: 'size'
