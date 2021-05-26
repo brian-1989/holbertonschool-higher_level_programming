@@ -13,6 +13,12 @@ Cases of requirement:
 	    True
 
 ----------------------------------------------------------------------------------
+    Test to the module docstring:
+        >>> _func = __import__("0-add_integer").add_integer.__doc__
+	    >>> len(_func) > 1
+	    True
+
+----------------------------------------------------------------------------------
     Test of Pep8:
         >>> import os
 	    >>> os.popen("pep8 0-add_integer.py").read()
@@ -88,3 +94,10 @@ Errors Case to test the function:
         Traceback (most recent call last):
             ...
         TypeError: b must be an integer
+
+----------------------------------------------------------------------------------
+    Test when you spend Nan
+        >>> add_integer(2, float('NaN'))
+        Traceback (most recent call last):
+            ...
+        ValueError: cannot convert float NaN to integer
