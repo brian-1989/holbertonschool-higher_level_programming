@@ -1,19 +1,66 @@
-File of test to the function of print the name
-==============
->>> say_my_name = __import__('3-say_my_name').say_my_name
->>> say_my_name(4, "Smith")
-Traceback (most recent call last):
-    ...
-TypeError: first_name must be a string
->>> say_my_name("John", 5)
-Traceback (most recent call last):
-    ...
-TypeError: last_name must be a string
->>> say_my_name(None, "Smith")
-Traceback (most recent call last):
-    ...
-TypeError: first_name must be a string
->>> say_my_name("John", None)
-Traceback (most recent call last):
-    ...
-TypeError: last_name must be a string
+File of test to the function 3-say_my_name
+==================================================================================
+
+Import the module:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+==================================================================================
+Cases of requirement:
+
+    Test to the module docstring:
+        >>> _module = __import__("3-say_my_name").__doc__
+	    >>> len(_module) > 1
+	    True
+
+----------------------------------------------------------------------------------
+    Test to the module docstring:
+        >>> _func = __import__("3-say_my_name").say_my_name.__doc__
+	    >>> len(_func) > 1
+	    True
+
+----------------------------------------------------------------------------------
+    Test of Pep8:
+        >>> import os
+	    >>> os.popen("pep8 2-matrix_divided.py").read()
+	    ''
+
+==================================================================================
+Cases to test the function:
+
+    Test to normal use:
+        >>> say_my_name("Walter", "White")
+        My name is Walter White
+
+----------------------------------------------------------------------------------
+    Test when 1 argument is passed:
+        >>> say_my_name("Walter")
+        My name is Walter
+
+==================================================================================
+Errors Case to test the function:
+    Test when the name is integer
+        >>> say_my_name(4, "Smith")
+        Traceback (most recent call last):
+            ...
+        TypeError: first_name must be a string
+
+----------------------------------------------------------------------------------
+    Test when the last name is integer:
+        >>> say_my_name("John", 5)
+        Traceback (most recent call last):
+            ...
+        TypeError: last_name must be a string
+
+----------------------------------------------------------------------------------
+    Test when the name is None
+        >>> say_my_name(None, "Smith")
+        Traceback (most recent call last):
+            ...
+        TypeError: first_name must be a string
+
+----------------------------------------------------------------------------------
+    Test when the last name is None:
+        >>> say_my_name("John", None)
+        Traceback (most recent call last):
+            ...
+        TypeError: last_name must be a string
