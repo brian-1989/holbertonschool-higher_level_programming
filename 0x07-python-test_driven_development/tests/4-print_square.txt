@@ -10,7 +10,7 @@ ases of requirement:
     Test to the module docstring:
         >>> _module = __import__("4-print_square").__doc__
 	    >>> len(_module) > 1
-	  c  True
+        True
 
 ----------------------------------------------------------------------------------
     Test to the module docstring:
