@@ -1,25 +1,81 @@
-File of test to the function of the sum
-==============
->>> add_integer = __import__('0-add_integer').add_integer
->>> add_integer(1, 2)
-3
->>> add_integer(-1, 2)
-1
->>> add_integer(-1, -2)
--3
->>> add_integer(-10.5, -10.5)
--20
->>> add_integer(1)
-99
->>> add_integer(3, "Brian")
-Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
->>> add_integer(None)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
->>> add_integer("Brian", "Zapata")
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
+File of test to the function 0-add_integer
+==================================================================================
+
+Import the module:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+==================================================================================
+Cases of requirement:
+
+    Test of Pep8:
+        >>> import os
+	    >>> os.popen("pep8 0-add_integer.py").read()
+	    ''
+
+==================================================================================
+Cases to test the function:
+    
+    Tests of numbers positive:
+        >>> add_integer(1, 2)
+        3
+
+        >>> add_integer(1)
+        99
+        
+----------------------------------------------------------------------------------
+    Tests of numbers negative:
+        >>> add_integer(-1, 2)
+        1
+
+        >>> add_integer(-1, -2)
+        -3
+
+        >>> add_integer(-10.5, -10.5)
+        -20
+
+==================================================================================
+Errors Case to test the function:
+
+    Tests of a number plus a string:
+        >>> add_integer(3, "Brian")
+        Traceback (most recent call last):
+            ...
+        TypeError: b must be an integer
+
+        >>> add_integer("Brian", 3)
+        Traceback (most recent call last):
+            ...
+        TypeError: a must be an integer
+
+----------------------------------------------------------------------------------
+    Test with a None
+        >>> add_integer(None)
+        Traceback (most recent call last):
+            ...
+        TypeError: a must be an integer
+
+----------------------------------------------------------------------------------
+    Test with two strings
+        >>> add_integer("Brian", "Zapata")
+        Traceback (most recent call last):
+            ...
+        TypeError: a must be an integer
+
+----------------------------------------------------------------------------------
+    Test of not arguments passed:
+        >>> add_integer()
+        Traceback (most recent call last):
+            ...
+        TypeError: add_integer() missing 1 required positional argument: 'a'
+
+----------------------------------------------------------------------------------
+    Tests with boolean number:
+        >>> add_integer(False, 2)
+        Traceback (most recent call last):
+            ...
+        TypeError: a must be an integer
+
+        >>> add_integer(1, True)
+        Traceback (most recent call last):
+            ...
+        TypeError: b must be an integer
