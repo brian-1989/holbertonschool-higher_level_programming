@@ -7,6 +7,12 @@ Import the module:
 ==================================================================================
 Cases of requirement:
 
+    Test to the module docstring:
+        >>> _module = __import__("0-add_integer").__doc__
+	    >>> len(_module) > 1
+	    True
+
+----------------------------------------------------------------------------------
     Test of Pep8:
         >>> import os
 	    >>> os.popen("pep8 0-add_integer.py").read()
@@ -15,15 +21,18 @@ Cases of requirement:
 ==================================================================================
 Cases to test the function:
     
-    Tests of numbers positive:
+    Tests of numbers positive with float:
         >>> add_integer(1, 2)
         3
 
         >>> add_integer(1)
         99
-        
+
+        >>> add_integer(10.5, 10.5)
+        20
+
 ----------------------------------------------------------------------------------
-    Tests of numbers negative:
+    Tests of numbers negative with float:
         >>> add_integer(-1, 2)
         1
 
