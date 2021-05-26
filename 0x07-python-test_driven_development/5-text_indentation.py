@@ -7,14 +7,17 @@ Text
 def text_indentation(text):
     """Function that print a text and in each character
     specified makes a jump line.
-    
+    Arg:
+        text = text to print
+
     """
     i = 0
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     jump = False
     while(i < len(text)):
-        if text[i] is " " and jump is False or text[i] is "\n" and jump is False:
+        if text[i] is " " and jump is False or\
+                text[i] is "\n" and jump is False:
             i += 1
             continue
         elif text[i] == " " and text[i + 1] == " " and text[i + 1]:
