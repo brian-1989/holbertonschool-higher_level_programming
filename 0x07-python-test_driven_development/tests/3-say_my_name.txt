@@ -31,11 +31,6 @@ Cases to test the function:
         >>> say_my_name("Walter", "White")
         My name is Walter White
 
-----------------------------------------------------------------------------------
-    Test when 1 argument is passed:
-        >>> say_my_name("Walter")
-        My name is Walter
-
 ==================================================================================
 Errors Case to test the function:
     Test when the name is integer
