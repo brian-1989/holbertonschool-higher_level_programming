@@ -6,7 +6,7 @@ function inherits from
 
 def inherits_from(obj, a_class):
     """function that compare if the object is an instance of a class that inherited
-    (directly or indirectly) from the specified class
+    (directly or indirectly) from the specified class.
     args:
         obj: object to compare.
         a_class: specified class.
