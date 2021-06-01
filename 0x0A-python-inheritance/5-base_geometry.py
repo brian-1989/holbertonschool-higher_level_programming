@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-function base geometry
+class base geometry
 """
 
 
