@@ -8,20 +8,6 @@ class BaseGeometry:
     """class base geometry.
 
     """
-    def __init__(self, width, height):
-        """initial method that receiving the arguments.
-        Agrgs:
-            width: width of Rectangle.
-            height: height of Rectangle.
-
-        """
-        self.__width = width
-        self.__height = height
-        if type(width) is not int:
-            self.integer_validator("width", width)
-        if type(height) is not int:
-            self.integer_validator("height", height)
-
     def area(self):
         """method that raise an exception.
 
@@ -46,4 +32,16 @@ class Rectangle(BaseGeometry):
     """class receiving the inheritance BaseGeometry.
 
     """
-    pass
+    def __init__(self, width, height):
+        """initial method that receiving the arguments.
+        Agrgs:
+            width: width of Rectangle.
+            height: height of Rectangle.
+
+        """
+        self.__width = width
+        self.__height = height
+        if type(width) is not int:
+            self.integer_validator("width", width)
+        if type(height) is not int:
+            self.integer_validator("height", height)
