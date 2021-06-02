@@ -16,8 +16,8 @@ class Square(Rectangle):
             size: size of square.
 
         """
-        super().__init__(size, size)
         self.__size = size
+        super().__init__(size, size)
         self.__str__()
 
     def __str__(self):
