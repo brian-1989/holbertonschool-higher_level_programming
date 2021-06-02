@@ -16,9 +16,9 @@ class Square(Rectangle):
             size: size of square.
 
         """
-        self.__size = size
+        self.integer_validator("size", size)
         super().__init__(size, size)
-        self.__str__()
+        self.__size = size
 
     def __str__(self):
         """method that return the description of a square.
