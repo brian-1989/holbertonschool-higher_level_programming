@@ -1,0 +1,61 @@
+File of test to the function 1-my_list
+==================================================================================
+
+Import the module:
+    >>> MyList = __import__('1-my_list').MyList
+
+==================================================================================
+Cases of requirement:
+    Test to the module docstring:
+        >>> _module = __import__("1-my_list").__doc__
+        >>> len(_module) > 1
+        True
+
+----------------------------------------------------------------------------------
+    Test to the module docstring:
+        >>> _func = __import__("1-my_list").MyList.__doc__
+        >>> len(_func) > 1
+        True
+
+----------------------------------------------------------------------------------
+    Test of Pep8:
+        >>> import os
+	    >>> os.popen("pep8 1-my_list.py").read()
+	    ''
+
+==================================================================================
+Cases to test the function:
+    Test when the list is empty
+        >>> my_list = MyList()
+        >>> print(my_list)
+        []
+        >>> my_list.print_sorted()
+        []
+        >>> print(my_list)
+        []
+
+----------------------------------------------------------------------------------
+    Test to normal use:
+        >>> my_list = MyList()
+        >>> my_list.append(1)
+        >>> my_list.append(4)
+        >>> my_list.append(2)
+        >>> my_list.append(3)
+        >>> my_list.append(5)
+        >>> print(my_list)
+        [1, 4, 2, 3, 5]
+        >>> my_list.print_sorted()
+        [1, 2, 3, 4, 5]
+        >>> print(my_list)
+        [1, 4, 2, 3, 5]
+
+----------------------------------------------------------------------------------
+    Test with negative number:
+        >>> my_list.append(-3)
+        >>> my_list.append(-5)
+        >>> print(my_list)
+        [1, 4, 2, 3, 5, -3, -5]
+        >>> my_list.print_sorted()
+        [-5, -3, 1, 2, 3, 4, 5]
+        >>> print(my_list)
+        [1, 4, 2, 3, 5, -3, -5]
