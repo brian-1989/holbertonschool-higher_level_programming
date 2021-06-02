@@ -8,6 +8,11 @@ class BaseGeometry:
     """class base geometry.
 
     """
+    
+    def __init__(self, width, height):
+        self.width = width
+        self.heigth = height
+    
     def area(self):
         """method that raise an exception.
 
