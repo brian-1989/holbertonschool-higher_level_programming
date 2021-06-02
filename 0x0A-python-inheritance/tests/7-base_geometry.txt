@@ -1,0 +1,54 @@
+File of test to the function 1-my_list
+==================================================================================
+
+Import the module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+==================================================================================
+Cases of requirement:
+    Test to the module docstring:
+        >>> _module = __import__("7-base_geometry").__doc__
+        >>> len(_module) > 1
+        True
+
+----------------------------------------------------------------------------------
+    Test to the module docstring:
+        >>> _func = __import__("7-base_geometry").BaseGeometry.__doc__
+        >>> len(_func) > 1
+        True
+
+----------------------------------------------------------------------------------
+    Test of Pep8:
+        >>> import os
+	    >>> os.popen("pep8 7-base_geometry.py").read()
+	    ''
+
+==================================================================================
+Errors Case to test the function:
+    Test when the object is empty:
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator()
+        Traceback (most recent call last):
+            ...
+        TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+----------------------------------------------------------------------------------
+    Test when the value is a negative number:
+        >>> bg.integer_validator("width", -89)
+        Traceback (most recent call last):
+            ...
+        ValueError: width must be greater than 0
+
+----------------------------------------------------------------------------------
+    Test when the value is zero:
+        >>> bg.integer_validator("width", 0)
+        Traceback (most recent call last):
+            ...
+        ValueError: width must be greater than 0
+
+----------------------------------------------------------------------------------
+    Test when the value is a string:
+        >>> bg.integer_validator("width", "John")
+        Traceback (most recent call last):
+            ...
+        TypeError: width must be an integer
