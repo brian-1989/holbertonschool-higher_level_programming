@@ -13,13 +13,7 @@ def write_file(filename="", text=""):
     Return the character number.
 
     """
-    if not filename:
-        with open(filename, 'w +') as _text:
-            write_text = _text.write(text)
-            _text.close()
-            return write_text
-    else:
-        with open(filename, 'a') as _text:
-            write_text = _text.write(text)
-            _text.close()
-            return write_text
+    with open(filename, 'w') as _text:
+        write_text = _text.write(text)
+        _text.close()
+        return write_text
