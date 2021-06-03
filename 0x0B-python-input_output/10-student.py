@@ -26,11 +26,6 @@ class Student:
 
         """
         my_dic = {}
-        if attrs is None:
-            my_dic['firs_name'] = self.first_name
-            my_dic['last_name'] = self.last_name
-            my_dic['age'] = self.age
-            return my_dic
         if type(attrs) is list:
             for i in attrs:
                 if i is 'first_name':
@@ -40,3 +35,5 @@ class Student:
                 if i is 'age':
                     my_dic[i] = self.age
             return my_dic
+        else:
+            return self.__dict__
