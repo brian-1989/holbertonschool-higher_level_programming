@@ -12,14 +12,14 @@ class Rectangle(Base):
 
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """initial method that store the arguments,
+        """initial method that store the arguments.
         of the class Rectangle.
         Args:
-            width: width of rectangle
-            height: height of rectangle
-            x: dimensions of rectangle
-            y: dimensions of rectangle
-            id: integer
+            width: width of rectangle.
+            height: height of rectangle.
+            x: dimensions of rectangle.
+            y: dimensions of rectangle.
+            id: integer.
 
         """
         if type(width) is not int:
@@ -119,3 +119,10 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
+
+    def area(self):
+        """method that find the area of a rectangle.
+        Return the area of a rectangle.
+
+        """
+        return self.width * self.height
