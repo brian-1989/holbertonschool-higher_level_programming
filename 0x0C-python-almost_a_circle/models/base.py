@@ -28,7 +28,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """method that converts a dictionary in a string.
+        """method that serialize a data struct in a string.
         Return the JSON string representation of list_dictionaries.
 
         """
@@ -61,3 +61,13 @@ class Base:
                 else:
                     text.write(string_list)
                 text.close()
+
+    def from_json_string(json_string):
+        """method that deserialize a string to data struct.
+        Return the list of the JSON string representation json_string.
+
+        """
+        if json_string is None or json_string is ():
+            return []
+        else:
+            return json.loads(json_string)
