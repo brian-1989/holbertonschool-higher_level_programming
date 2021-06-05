@@ -148,3 +148,29 @@ class Rectangle(Base):
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".\
             format(self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """method that update the arguments of each attribute.
+        Return the object in string.
+
+        """
+        if len(args) is 1:
+            super().__init__(args[0])
+        if len(args) is 2:
+            super().__init__(args[0])
+            self.width = args[1]
+        if len(args) is 3:
+            super().__init__(args[0])
+            self.width = args[1]
+            self.height = args[2]
+        if len(args) is 4:
+            super().__init__(args[0])
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+        if len(args) is 5:
+            super().__init__(args[0])
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
