@@ -136,3 +136,11 @@ class Rectangle(Base):
             for _width in range(self.width):
                 print("#", end="")
             print(end="\n")
+
+    def __str__(self) -> str:
+        """method that convert Python objects into strings.
+        Return the object in string.
+
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".\
+            format(self.id, self.x, self.y, self.width, self.height)
