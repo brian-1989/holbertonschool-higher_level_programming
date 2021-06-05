@@ -151,7 +151,6 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """method that update the arguments of each attribute.
-        Return the object in string.
 
         """
         if len(args) is 1:
