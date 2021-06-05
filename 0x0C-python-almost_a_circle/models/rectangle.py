@@ -156,3 +156,18 @@ class Rectangle(Base):
         """
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+    def to_dictionary(self):
+        """method that adding in a dictionary the attributes of
+        the class rectangle.
+        Return the dictionary with the attributes.
+
+        """
+        my_dic = {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+            }
+        return my_dic
