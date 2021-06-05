@@ -20,11 +20,11 @@ class Base:
             id: integer.
 
         """
-        if id is None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = self.__nb_object
+            self.id = self.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -71,3 +71,14 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """methon that created a instance and update
+        the attributtes.
+        Return the attributes update.
+
+        """
+        dummy = cls(4, 5)
+        dummy.update(**dictionary)
+        return dummy
