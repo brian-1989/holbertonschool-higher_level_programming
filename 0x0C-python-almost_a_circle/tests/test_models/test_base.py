@@ -24,7 +24,7 @@ class test_base(unittest.TestCase):
     def test_of_Pep8_test_base(self):
         self.assertEqual(os.system("pep8 tests/test_models/test_base.py"), 0)
 
-    """Cases of requirement.
+    """Cases to test the class.
 
     """
     def test_when_the_id_is_None(self):
