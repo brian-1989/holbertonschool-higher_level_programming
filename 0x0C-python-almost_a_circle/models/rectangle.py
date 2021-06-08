@@ -154,8 +154,13 @@ class Rectangle(Base):
         with the argument kwargs.
 
         """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        if args:
+            my_list = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, my_list[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """method that adding in a dictionary the attributes of
