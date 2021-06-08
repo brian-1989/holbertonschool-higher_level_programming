@@ -3,11 +3,10 @@
 Test to the rectangle class.
 """
 
-from models import base, rectangle
+from models import rectangle
 import unittest
 import os
 
-Base = base.Base
 Rectangle = rectangle.Rectangle
 
 
