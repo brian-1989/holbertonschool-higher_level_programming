@@ -44,10 +44,10 @@ class Base:
         """
         my_list = []
         for i in list_objs:
-            my_list.append(i.__dict__)
+            my_list.append(i.to_dictionary())
         if path.exists("{}.json".format(cls.__name__)):
             with open("{}.json".format(cls.__name__), 'a') as text:
-                string_list = Base.to_json_string(my_list)
+                string_list = cls.to_json_string(my_list)
                 if list_objs is None:
                     text.write("[]")
                 else:
