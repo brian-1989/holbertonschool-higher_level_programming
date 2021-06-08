@@ -49,7 +49,7 @@ class Base:
             for i in list_objs:
                 my_list.append(cls.to_dictionary(i))
             if path.exists("{}.json".format(cls.__name__)):
-                with open("{}.json".format(cls.__name__), 'a') as text:
+                with open("{}.json".format(cls.__name__), 'w') as text:
                     string_list = cls.to_json_string(my_list)
                     text.write(string_list)
             else:
