@@ -42,25 +42,28 @@ class Base:
         of list_objs.
 
         """
-        my_list = []
-        for i in list_objs:
-            my_list.append(i.to_dictionary())
-        if path.exists("{}.json".format(cls.__name__)):
-            with open("{}.json".format(cls.__name__), 'a') as text:
-                string_list = cls.to_json_string(my_list)
-                if list_objs is None:
-                    text.write("[]")
-                else:
-                    text.write(string_list)
-                text.close()
+        if list_objs is None:
+            my_list = []
         else:
-            with open("{}.json".format(cls.__name__), 'w') as text:
-                string_list = Base.to_json_string(my_list)
-                if list_objs is None:
-                    text.write("[]")
-                else:
-                    text.write(string_list)
-                text.close()
+            my_list = []
+            for i in list_objs:
+                my_list.append(i.to_dictionary())
+            if path.exists("{}.json".format(cls.__name__)):
+                with open("{}.json".format(cls.__name__), 'w') as text:
+                    string_list = cls.to_json_string(my_list)
+                    if list_objs is None:
+                        text.write("[]")
+                    else:
+                        text.write(string_list)
+                    text.close()
+            else:
+                with open("{}.json".format(cls.__name__), 'w') as text:
+                    string_list = Base.to_json_string(my_list)
+                    if list_objs is None:
+                        text.write("[]")
+                    else:
+                        text.write(string_list)
+                    text.close()
 
     def from_json_string(json_string):
         """method that deserialize a string to data struct.
