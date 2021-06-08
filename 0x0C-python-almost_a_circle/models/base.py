@@ -74,8 +74,12 @@ class Base:
         Return the attributes update.
 
         """
-        dummy = cls(4, 5)
-        dummy.update(**dictionary)
+        if cls.__name__ is 'Rectangle':
+            dummy = cls(4, 5)
+            dummy.update(**dictionary)
+        else:
+            dummy = cls(6)
+            dummy.update(**dictionary)
         return dummy
 
     @classmethod
