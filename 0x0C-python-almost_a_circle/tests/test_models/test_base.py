@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Test.
+Test to the base class.
 """
 
 
@@ -54,3 +54,6 @@ class test_base(unittest.TestCase):
         _json_dict_list = Base.from_json_string(_json_dict)
         _type = isinstance(_json_dict_list, dict)
         self.assertEqual(_type, True)
+
+if __name__ == "__main__":
+    unittest.main()
