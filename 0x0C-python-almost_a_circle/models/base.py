@@ -48,14 +48,9 @@ class Base:
             my_list = []
             for i in list_objs:
                 my_list.append(cls.to_dictionary(i))
-            if path.exists("{}.json".format(cls.__name__)):
-                with open("{}.json".format(cls.__name__), 'w') as text:
-                    string_list = cls.to_json_string(my_list)
-                    text.write(string_list)
-            else:
-                with open("{}.json".format(cls.__name__), 'w') as text:
-                    string_list = cls.to_json_string(my_list)
-                    text.write(string_list)
+            with open("{}.json".format(cls.__name__), 'w') as text:
+                string_list = cls.to_json_string(my_list)
+                text.write(string_list)
 
     def from_json_string(json_string):
         """method that deserialize a string to data struct.
