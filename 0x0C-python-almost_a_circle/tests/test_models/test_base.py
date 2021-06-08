@@ -35,9 +35,17 @@ class test_base(unittest.TestCase):
         b1 = Base(None)
         self.assertEqual(b1.id, 3)
 
-    def test_when_the_id_is_integer(self):
+    def test_when_the_id_is_positive(self):
         b1 = Base(100)
         self.assertEqual(b1.id, 100)
+
+    def test_when_the_id_is_negative(self):
+        b1 = Base(-100)
+        self.assertEqual(b1.id, -100)
+
+    def test_when_the_id_is_float(self):
+        b1 = Base(10.9)
+        self.assertEqual(b1.id, 10.9)
 
     def test_to_validate_the_JSON_string_representation_of_list_dictionaries(
             self):
