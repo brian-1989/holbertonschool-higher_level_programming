@@ -27,6 +27,11 @@ class test_rectangle(unittest.TestCase):
     def test_of_Pep8_square(self):
         self.assertEqual(os.system("pep8 tests/test_models/test_square.py"), 0)
 
+    def test_to_shebang(self):
+        with open('models/square.py', 'r') as text:
+            line_1 = text.readline()
+            self.assertEqual(line_1.strip(), '#!/usr/bin/python3')
+
     """Cases to test the class.
 
     """
