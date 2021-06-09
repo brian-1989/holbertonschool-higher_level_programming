@@ -52,6 +52,12 @@ class test_rectangle(unittest.TestCase):
         s5 = Square(28, 29, 30, 31)
         self.assertEqual(s5.__str__(), "[Square] (31) 29/30 - 28")
 
+    def test_to_the_dictionary(self):
+        r6 = Rectangle(32, 33, 34, 35, 36)
+        r6_dictionary = r6.to_dictionary()
+        _dict = {'id': 36, 'width': 32, 'height': 33, 'x': 34, 'y': 35}
+        self.assertEqual(r6_dictionary, _dict)
+
     """Errors Case to test the class.
 
     """
