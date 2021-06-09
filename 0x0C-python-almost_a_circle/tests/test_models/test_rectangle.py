@@ -59,8 +59,9 @@ class test_rectangle(unittest.TestCase):
 
     def test_to_the_dictionary(self):
         r6 = Rectangle(36, 37, 38, 39, 40)
-        self.assertEqual(r6.to_dictionary(), {'id': 40, 'width': 36, 'he\
-            ight': 37, 'x': 38, 'y': 39})
+        r6_dictionary = r6.to_dictionary()
+        _dict = {'id': 40, 'width': 36, 'height': 37, 'x': 38, 'y': 39}
+        self.assertEqual(r6_dictionary, _dict)
 
     """Errors Case to test the class.
 
