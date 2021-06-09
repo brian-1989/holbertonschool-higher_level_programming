@@ -38,7 +38,7 @@ class test_base(unittest.TestCase):
     """
     def test_when_the_id_is_None(self):
         b1 = Base(None)
-        self.assertEqual(b1.id, 3)
+        self.assertEqual(b1.id, 2)
 
     def test_when_the_id_is_positive(self):
         b1 = Base(100)
@@ -56,16 +56,25 @@ class test_base(unittest.TestCase):
             self):
         r1 = Rectangle(45, 67)
         _dict = r1.to_dictionary()
-        _json_dict = Base.to_json_string(_dict)
-        _type = isinstance(_json_dict, str)
+        _json_dict_str = Base.to_json_string([_dict])
+        _type = isinstance(_json_dict_str, str)
         self.assertEqual(_type, True)
+        _json_dict = Base.from_json_string(_json_dict_str)
+        test_dict = [{"id": 1, "width": 45, "height": 67, "x": 0, "y": 0}]
+        self.assertEqual(_json_dict, test_dict)
+
+    def test_to_validate_the_JSON_string_of_list_dictionaries_empty(self):
+        _json_dict_str = Base.to_json_string([])
+        _type = isinstance(_json_dict_str, str)
+        self.assertEqual(_type, True)
+        _json_dict = Base.from_json_string(_json_dict_str)
+        test_dict = []
+        self.assertEqual(_json_dict, test_dict)
 
     def test_to_validate_the_dict_of_the_JSON_string_representation(self):
-        r1 = Rectangle(45, 67)
-        _dict = r1.to_dictionary()
-        _json_dict = Base.to_json_string(_dict)
-        _json_dict_list = Base.from_json_string(_json_dict)
-        _type = isinstance(_json_dict_list, dict)
+        test_dict = '[{"id": 2, "width": 46, "height": 68, "x": 0, "y": 0}]'
+        _json_dict_str = Base.to_json_string(test_dict)
+        _type = isinstance(_json_dict_str, str)
         self.assertEqual(_type, True)
 
 if __name__ == "__main__":
