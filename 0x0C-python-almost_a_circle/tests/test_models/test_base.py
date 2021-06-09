@@ -38,7 +38,7 @@ class test_base(unittest.TestCase):
     """
     def test_when_the_id_is_None(self):
         b1 = Base(None)
-        self.assertEqual(b1.id, 2)
+        self.assertEqual(b1.id, 6)
 
     def test_when_the_id_is_positive(self):
         b1 = Base(100)
@@ -60,7 +60,7 @@ class test_base(unittest.TestCase):
         _type = isinstance(_json_dict_str, str)
         self.assertEqual(_type, True)
         _json_dict = Base.from_json_string(_json_dict_str)
-        test_dict = [{"id": 1, "width": 45, "height": 67, "x": 0, "y": 0}]
+        test_dict = [{"id": 5, "width": 45, "height": 67, "x": 0, "y": 0}]
         self.assertEqual(_json_dict, test_dict)
 
     def test_to_validate_the_JSON_string_of_list_dictionaries_empty(self):
