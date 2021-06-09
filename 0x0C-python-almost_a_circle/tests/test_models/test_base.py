@@ -77,5 +77,9 @@ class test_base(unittest.TestCase):
         _type = isinstance(_json_dict_str, str)
         self.assertEqual(_type, True)
 
+    def test_to_validate_the_dict_of_the_JSON_string_is_None(self):
+        _json_dict_str = Base.to_json_string(None)
+        self.assertEqual(_json_dict_str, "[]")
+
 if __name__ == "__main__":
     unittest.main()
