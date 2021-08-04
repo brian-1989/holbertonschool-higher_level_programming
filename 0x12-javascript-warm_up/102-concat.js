@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* This script that concats 2 files */
+/* This script that concats 2 files, handing of file */
 let fileOpen1 = process.argv[2];
 let fileOPen2 = process.argv[3];
 let fileCreate = process.argv[4];
