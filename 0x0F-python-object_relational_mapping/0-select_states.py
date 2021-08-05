@@ -12,18 +12,18 @@ def data_base():
     """ Function to connect a file python with an data base and print an query.
 
     """
-    my_dd = MySQLdb.connect(host="localhost",
+    my_db = MySQLdb.connect(host="localhost",
                             user=argv[1],
                             passwd="Brian1995#",
                             db=argv[3],
                             port=3306)
-    my_cursor = my_dd.cursor()
+    my_cursor = my_db.cursor()
     my_cursor.execute("SELECT id, name FROM states ORDER BY id ASC")
     data = my_cursor.fetchone()
     while data:
         print(data)
         data = my_cursor.fetchone()
-    my_dd.close()
+    my_db.close()
 
 
 if __name__ == '__main__':
