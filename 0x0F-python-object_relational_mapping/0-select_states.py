@@ -9,7 +9,7 @@ from sys import argv
 
 
 def data_base():
-    """ Function to connect a file python with an data base.
+    """ Function to connect a file python with an data base and print an query.
 
     """
     my_dd = MySQLdb.connect(host="localhost",
