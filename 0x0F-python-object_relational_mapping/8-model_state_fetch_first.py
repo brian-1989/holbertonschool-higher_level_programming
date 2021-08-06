@@ -15,7 +15,7 @@ if __name__ == '__main__':
                             sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(bind=engine)
-    a = session.query(State).order_by(State.id).first()
+    a = session.query(State).first()
     if State == '':
         print("Nothing")
     else:
