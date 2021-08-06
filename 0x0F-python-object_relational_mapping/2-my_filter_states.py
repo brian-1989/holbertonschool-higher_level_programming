@@ -12,13 +12,12 @@ def data_base():
     """ Function to connect a file python with an data base and print an query.
 
     """
-    my_db = MySQLdb.connect(host="localhost",
-                            user=argv[1],
+    my_db = MySQLdb.connect(user=argv[1],
                             passwd="Brian1995#",
-                            db=argv[3],
-                            port=3306)
+                            db=argv[3])
     my_cursor = my_db.cursor()
-    my_cursor.execute("SELECT id, name FROM states WHERE name='{}'".format(argv[4]))
+    my_cursor.execute("SELECT id, name FROM states WHERE\
+        name='{}'".format(argv[4]))
     data = my_cursor.fetchone()
     while data:
         print(data)
