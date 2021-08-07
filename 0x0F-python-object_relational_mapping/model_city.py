@@ -13,8 +13,10 @@ Base = declarative_base()
 
 
 class City(Base):
-    """ This class inherits of the Base class and serve to connect
-    the states and cities tables.
+    """ This class inherits of the Base class, serve to connect
+    the states and cities tables and create:
+    1-> An table called cities.
+    2-> three columns called id, name and state_id
 
     """
     __tablename__ = 'cities'
