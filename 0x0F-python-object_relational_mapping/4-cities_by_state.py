@@ -13,7 +13,7 @@ def data_base():
 
     """
     my_db = MySQLdb.connect(user=argv[1],
-                            passwd="Brian1995#",
+                            passwd=argv[2],
                             db=argv[3])
     my_cursor = my_db.cursor()
     my_cursor.execute("SELECT cities.id, cities.name, states.name FROM\
