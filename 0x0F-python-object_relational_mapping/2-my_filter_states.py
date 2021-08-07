@@ -17,7 +17,7 @@ def data_base():
                             db=argv[3])
     my_cursor = my_db.cursor()
     my_cursor.execute("SELECT id, name FROM states WHERE\
-        name='{}'".format(argv[4]))
+        BINARY name='{}'".format(argv[4]))
     data = my_cursor.fetchone()
     while data:
         print(data)
