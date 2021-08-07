@@ -16,7 +16,7 @@ def data_base():
                             passwd=argv[2],
                             db=argv[3])
     my_cursor = my_db.cursor()
-    my_cursor.execute("SELECT id, name FROM states WHERE name Like 'N%'")
+    my_cursor.execute("SELECT id, name FROM states WHERE name LIKE BINARY'N%'")
     data = my_cursor.fetchone()
     while data:
         print(data)
