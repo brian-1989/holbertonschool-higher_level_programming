@@ -7,7 +7,6 @@ and displays the body of the response.
 import requests
 import sys
 
-from requests.models import HTTPError
 
 if __name__ == "__main__":
     response = requests.get(sys.argv[1])
