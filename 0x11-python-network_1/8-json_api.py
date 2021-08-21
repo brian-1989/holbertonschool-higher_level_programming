@@ -15,10 +15,10 @@ if __name__ == "__main__":
         my_dict['q'] = sys.argv[1]
     response = requests.post('http://0.0.0.0:5000/search_user', data=my_dict)
     _json = response.json()
-    if _json != {}:
-        try:
+    try:
+        if _json != {}:
             print("[{}] {}".format(_json['id'], _json['name']))
-        except(KeyError):
-            print("Not a valid JSON")
-    else:
-        print("No result")
+        else:
+            print("No result")
+    except():
+        print("Not a valid JSON")
