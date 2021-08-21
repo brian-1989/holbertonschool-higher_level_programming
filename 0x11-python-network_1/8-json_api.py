@@ -9,14 +9,15 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-        myobj = {"q": sys.argv[1]}
+        obj = {"q": sys.argv[1]}
     else:
-        myobj = {"q": ""}
-    r = requests.post('http://0.0.0.0:5000/search_user', data=myobj)
+        obj = {"q": ""}
+    response = requests.post('http://0.0.0.0:5000/search_user', data=obj)
+    _json = response.json()
     try:
-        if len(r.json()) > 0:
-            print("[{}] {}".format(r.json()['id'], r.json()['name']))
+        if len(_json) > 0:
+            print("[{}] {}".format(_json['id'], _json['name']))
         else:
             print("No result")
-    except:
+    except():
         print("Not a valid JSON")
