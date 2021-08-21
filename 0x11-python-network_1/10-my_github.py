@@ -12,5 +12,5 @@ if __name__ == "__main__":
             'https://api.github.com/user', auth=(sys.argv[1], sys.argv[2]))
         _json = response.json()
         print(_json['id'])
-    except():
+    except:
         print(None)
