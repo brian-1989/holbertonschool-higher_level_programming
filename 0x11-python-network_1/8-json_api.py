@@ -8,17 +8,15 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    my_dict = {}
-    if len(sys.argv) == 1:
-        my_dict['q'] = ""
+    if len(sys.argv) > 1:
+        myobj = {"q": sys.argv[1]}
     else:
-        my_dict['q'] = sys.argv[1]
-    response = requests.post('http://0.0.0.0:5000/search_user', data=my_dict)
-    _json = response.json()
-    if len(_json) > 0:
-        try:
-            print("[{}] {}".format(_json['id'], _json['name']))
-        except(KeyError):
-            print("Not a valid JSON")
-    else:
-        print("No result")
+        myobj = {"q": ""}
+    r = requests.post('http://0.0.0.0:5000/search_user', data=myobj)
+    try:
+        if len(r.json()) > 0:
+            print("[{}] {}".format(r.json()['id'], r.json()['name']))
+        else:
+            print("No result")
+    except:
+        print("Not a valid JSON")
