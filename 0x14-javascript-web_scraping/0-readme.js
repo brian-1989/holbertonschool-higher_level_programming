@@ -1,4 +1,5 @@
 #!/usr/bin/node
+/* This script print the content of a file */
 const fs = require('fs');
 
 fs.readFile(process.argv[2], 'utf-8', (err, data) => {
@@ -6,4 +7,4 @@ fs.readFile(process.argv[2], 'utf-8', (err, data) => {
     return console.error(err);
   }
   console.log(data);
-})
+});
