@@ -15,7 +15,9 @@ request(process.argv[2], (error, process, body) => {
         countComplete += 1;
       }
     }
-    dict[i] = countComplete;
+    if (countComplete !== 0){
+      dict[i] = countComplete;
+    }
   }
   console.log(dict);
 });
