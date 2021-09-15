@@ -1,17 +1,21 @@
 #!/usr/bin/node
 /* This script prints the number of movies where the Wedge  is present */
 const request = require('request');
+const id = 18;
+let count = 0;
 
-const url = process.argv[2] + '1';
+const url = process.argv[2];
 request(url, (error, response, body) => {
   if (error) {
     return console.error(error);
   }
-  const url2 = (JSON.parse(body).characters[15]);
-  request(url2, (error, response, body) => {
-    if (error) {
-      console.log(error);
+  const myList = JSON.parse(body).results;
+  for (const dict of myList) {
+    for (const urlFilms of dict.characters) {
+      if (urlFilms.includes(id)) {
+        count += 1;
+      }
     }
-    console.log(JSON.parse(body).films.length);
-  });
+  }
+  console.log(count);
 });
